@@ -1,0 +1,11 @@
+{
+  "name": "vfge",
+  "version": "0.0.1",
+  "description": "TypeScript game engine for making canvas-based games",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cole Granof",
+  "license": "ISC"
+}

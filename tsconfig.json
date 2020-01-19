@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "ES6",
+    "target": "ES6",
+    "watch": false,
+    "declaration": true,
+    "outDir": "./dist"
+  },
+  "include": ["src/**/*", "test.ts"],
+  "exclude": ["node_modules"],
+  "lib": ["ESNext", "dom"]
+}
