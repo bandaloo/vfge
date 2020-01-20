@@ -69,4 +69,18 @@ export namespace GameManager {
     const displayDiv = document.getElementById(gameDivId);
     displayDiv.appendChild(displayCanvas);
   }
+
+  /**
+   * Return the drawing canvas.
+   */
+  export function getCanvas() {
+    return drawingCanvas;
+  }
+
+  /**
+   * Return the drawing context.
+   */
+  export function getContext() {
+    return drawingContext;
+  }
 }
