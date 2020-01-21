@@ -12,3 +12,7 @@ console.log(grid);
 
 const gridVec = new Grid(3, 3, (i, j) => new Vector(i, j));
 console.log(gridVec);
+
+grid.griderate((g, i, j) => {
+  console.log(g[i][j]);
+});
