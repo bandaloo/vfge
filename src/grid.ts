@@ -18,8 +18,9 @@ export class Grid<T> {
     this.height = height;
     this.cells = new Array<T[]>(width);
     for (let i = 0; i < width; i++) {
+      this.cells[i] = new Array<T>(height);
       for (let j = 0; j < height; j++) {
-        this.cells[i].push(fill(i, j));
+        this.cells[i][j] = fill(i, j);
       }
     }
   }
