@@ -1,12 +1,12 @@
 export namespace DisplayManager {
-  console.log("running game manager");
+  console.log("running display manager");
   let drawingCanvas: HTMLCanvasElement;
   let drawingContext: CanvasRenderingContext2D;
   let displayCanvas: HTMLCanvasElement;
   let displayContext: CanvasRenderingContext2D;
 
   /**
-   * Starts the game manager and sets up the canvas.
+   * Starts the display manager which sets up the canvas.
    * @param drawingWidth width of the drawing canvas
    * @param drawingHeight height of the drawing canvas
    * @param displayWidth width of the display canvas

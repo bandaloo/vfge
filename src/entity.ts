@@ -1,4 +1,4 @@
-import { Vector } from "./vector.js";
+import { Vector } from "./vector";
 
 export abstract class Entity {
   /** The kind of entity used for collisions and other events. */

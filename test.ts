@@ -1,6 +1,6 @@
-import { DisplayManager } from "./src/displaymanager.js";
-import { Vector } from "./src/vector.js";
-import { Grid } from "./src/grid.js";
+import { DisplayManager } from "./src/displaymanager";
+import { Vector } from "./src/vector";
+import { Grid } from "./src/grid";
 
 DisplayManager.run();
 const vec = new Vector(123, 456);

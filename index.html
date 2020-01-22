@@ -3,10 +3,10 @@
     <title>
       VFGE
     </title>
-    <!-- Paths are relative to the `dist` directory. -->
-    <script type="module" src="./test.js"></script>
   </head>
   <body>
     <div id="gamediv"></div>
+    <!-- Placing script after div fixes problem. -->
+    <script src="./bundledtest.js"></script>
   </body>
 </html>

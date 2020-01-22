@@ -1,4 +1,4 @@
-import { clamp } from "./helpers.js";
+import { clamp } from "./helpers";
 
 export class Vector {
   x: number;
