@@ -1,8 +1,8 @@
-import { GameManager } from "./src/gamemanager.js";
+import { DisplayManager } from "./src/displaymanager.js";
 import { Vector } from "./src/vector.js";
 import { Grid } from "./src/grid.js";
 
-GameManager.run();
+DisplayManager.run();
 const vec = new Vector(123, 456);
 console.log(vec);
 console.log(" " + vec);

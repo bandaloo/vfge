@@ -1,4 +1,4 @@
-export namespace GameManager {
+export namespace DisplayManager {
   console.log("running game manager");
   let drawingCanvas: HTMLCanvasElement;
   let drawingContext: CanvasRenderingContext2D;

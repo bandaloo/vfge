@@ -4,7 +4,8 @@
     "target": "ES6",
     "watch": true,
     "declaration": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "moduleResolution": "node"
   },
   "include": ["src/**/*", "test.ts"],
   "exclude": ["node_modules"],
