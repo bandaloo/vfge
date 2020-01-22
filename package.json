@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "tsc",
+    "bundle": "node_modules/.bin/watchify dist/test.js -o dist/bundledtest.js"
   },
   "author": "Cole Granof",
   "license": "ISC",
@@ -21,6 +23,7 @@
     "@types/node": "^13.1.8",
     "jest": "^24.9.0",
     "ts-jest": "^24.3.0",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "watchify": "^3.11.1"
   }
 }
