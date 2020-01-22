@@ -40,11 +40,13 @@ export class Vector {
   }
 
   /**
-   * Multiplies the vector by another and returns a new vector.
+   * Scales the x component of vector by first argument and y component by
+   * second argument. If only one argument is passed in, it is simple scalar
+   * multiplication.
    * @param sx scale in x direction
    * @param sy scale in y direction
    */
-  mult(sx: number, sy = sx) {
+  scale(sx: number, sy = sx) {
     return new Vector(this.x * sx, this.y * sy);
   }
 
@@ -80,7 +82,7 @@ export class Vector {
     if (this.x === 0 && this.y === 0) {
       throw new Error("can't normalize the zero vector");
     }
-    return this.mult(1 / this.dist(new Vector(0, 0)));
+    return this.scale(1 / this.dist(new Vector(0, 0)));
   }
 
   /**
@@ -91,7 +93,7 @@ export class Vector {
     if (this.x === 0 && this.y === 0) {
       return this;
     }
-    return this.mult(1 / this.dist(new Vector(0, 0)));
+    return this.scale(1 / this.dist(new Vector(0, 0)));
   }
 
   midpoint(v: Vector) {
@@ -104,7 +106,7 @@ export class Vector {
    * @param s how far to go between to points (between 0 and 1)
    */
   partway(v: Vector, s: number) {
-    return this.add(v.sub(this).mult(s));
+    return this.add(v.sub(this).scale(s));
   }
 
   /**
@@ -121,7 +123,7 @@ export class Vector {
     const t = clamp(this.sub(a).dot(b.sub(a)) / length2, 0, 1);
     const c = b
       .sub(a)
-      .mult(t)
+      .scale(t)
       .add(a);
     return c;
   }

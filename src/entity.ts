@@ -40,7 +40,7 @@ export abstract class Entity {
    * Move the entity based on velocity and acceleration.
    */
   step() {
-    this.vel = this.vel.add(this.acc).mult(1 - this.drag);
+    this.vel = this.vel.add(this.acc).scale(1 - this.drag);
     this.pos = this.pos.add(this.vel);
   }
 }
