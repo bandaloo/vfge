@@ -1,7 +1,7 @@
 export class Grid<T> {
   private width: number;
   private height: number;
-  cells: T[][];
+  private cells: T[][];
 
   /**
    * Construct a grid.
@@ -26,14 +26,45 @@ export class Grid<T> {
   }
 
   /**
+   * Returns the dimensions of the grid.
+   */
+  get dimensions() {
+    return { width: this.width, height: this.height };
+  }
+
+  inbounds(i: number, j: number) {
+    return i > 0 && i < this.width && j > 0 && j < this.height;
+  }
+
+  /**
    * Act on each cell of the grid with a function.
    * @param func function to act on each cell of the grid
    */
-  griderate(func: (arg0: T[][], arg1: number, arg2: number) => void) {
+  griderate(func: (arg0: Grid<T>, arg1: number, arg2: number) => void) {
     for (let i = 0; i < this.width; i++) {
       for (let j = 0; j < this.height; j++) {
-        func(this.cells, i, j);
+        func(this, i, j);
       }
     }
+  }
+
+  /**
+   * Gets the element at the specified position.
+   * @param i cell horizontal position
+   * @param j cell vertical position
+   */
+  getCell(i: number, j: number) {
+    // TODO do boundary checking
+    return this.cells[i][j];
+  }
+
+  /**
+   * Sets the element at the specified position.
+   * @param i cell horizontal position
+   * @param j cell vertical position
+   * @param element
+   */
+  setCell(i: number, j: number, element: T) {
+    this.cells[i][j] = element;
   }
 }
