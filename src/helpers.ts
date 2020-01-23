@@ -37,3 +37,23 @@ export function shuffle(list: Iterable<unknown> | ArrayLike<unknown>) {
   }
   return randomList;
 }
+
+/**
+ * Filters an array in place.
+ * @param array the array to filter
+ * @param func how to filter
+ * @param destruct defaults to a no-op
+ */
+export function inPlaceFilter<T>(
+  array: T[],
+  func: (arg0: T) => boolean,
+  destruct: (arg0: T) => void = n => {}
+) {
+  for (var i = 0; i < array.length; i++) {
+    if (!func(array[i])) {
+      destruct(array[i]);
+      array.splice(i, 1);
+      i--;
+    }
+  }
+}

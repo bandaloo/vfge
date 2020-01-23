@@ -28,6 +28,12 @@ export abstract class Entity {
   /** The depth of the entity when drawing. */
   depth = 0;
 
+  /** Whether the entity should be deleted. */
+  deleteMe = false;
+
+  /** How many game steps an entity can live for before deleted. */
+  lifetime = Infinity;
+
   constructor(pos: Vector, vel = new Vector(0, 0), acc = new Vector(0, 0)) {
     this.pos = pos;
     this.drawPos = pos;
@@ -43,4 +49,10 @@ export abstract class Entity {
     this.vel = this.vel.add(this.acc).scale(1 - this.drag);
     this.pos = this.pos.add(this.vel);
   }
+
+  draw() {}
+
+  destroy() {}
+
+  abstract action();
 }

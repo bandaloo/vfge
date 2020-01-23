@@ -1,3 +1,5 @@
+import { WorldManager } from "./worldmanager";
+
 export namespace DisplayManager {
   console.log("running display manager");
   let drawingCanvas: HTMLCanvasElement;
@@ -60,7 +62,7 @@ export namespace DisplayManager {
     document.addEventListener("keydown", e => {
       const code = e.keyCode;
       const key = String.fromCharCode(code);
-      if (key == "F") {
+      if (key == fullscreenKey) {
         enterFullscreen();
       }
     });
@@ -68,6 +70,9 @@ export namespace DisplayManager {
     // Add display to div.
     const displayDiv = document.getElementById(gameDivId);
     displayDiv.appendChild(displayCanvas);
+
+    // Run the game.
+    WorldManager.update();
   }
 
   /**
