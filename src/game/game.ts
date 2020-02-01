@@ -1,7 +1,8 @@
-import { DisplayManager } from "./src/displaymanager";
-import { Vector } from "./src/vector";
-import { Grid } from "./src/grid";
+import { DisplayManager } from "../displaymanager";
+import { Vector } from "../vector";
+import { Grid } from "../grid";
 
+console.log("i'm a bundled game");
 DisplayManager.run();
 const vec = new Vector(123, 456);
 console.log(vec);

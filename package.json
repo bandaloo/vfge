@@ -7,7 +7,7 @@
     "test": "jest",
     "start": "node index.js",
     "build": "tsc",
-    "bundle": "node_modules/.bin/watchify dist/test.js -o dist/bundledtest.js"
+    "bundle": "node_modules/.bin/watchify dist/game/game.js -o dist/bundledgame.js"
   },
   "author": "Cole Granof",
   "license": "ISC",
