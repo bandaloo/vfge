@@ -50,9 +50,9 @@ export abstract class Entity {
     this.pos = this.pos.add(this.vel);
   }
 
-  draw() {}
-
   destroy() {}
 
-  abstract action();
+  abstract draw(): void;
+
+  abstract action(): void;
 }

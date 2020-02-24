@@ -133,7 +133,7 @@ export class Vector {
    * @param a the first endpoint of the line segment
    * @param b the last endpoint of the line segement
    */
-  distToSeg(a, b) {
+  distToSeg(a: Vector, b: Vector) {
     return this.dist(this.closestVecToSeg(a, b));
   }
 

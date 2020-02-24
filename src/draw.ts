@@ -12,8 +12,7 @@ import { DisplayManager } from "./displaymanager";
  */
 export function centeredRect(
   centerVec: Vector,
-  width: number,
-  height: number,
+  dim: Vector,
   fillStyle: string | CanvasGradient | CanvasPattern = "gray",
   strokeStyle: string | CanvasGradient | CanvasPattern = "white",
   lineWidth: number = 0
@@ -23,8 +22,8 @@ export function centeredRect(
   context.lineWidth = lineWidth;
   context.strokeStyle = strokeStyle;
   context.fillStyle = fillStyle;
-  const cornerVec = centerVec.sub(new Vector(width / 2, height / 2));
-  context.rect(cornerVec.x, cornerVec.y, width, height);
+  const cornerVec = centerVec.sub(dim.scale(0.5));
+  context.rect(cornerVec.x, cornerVec.y, dim.x, dim.y);
   context.fill();
   context.stroke();
   context.restore();
